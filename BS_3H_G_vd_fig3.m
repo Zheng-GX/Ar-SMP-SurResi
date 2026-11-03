@@ -92,13 +92,14 @@ for iH=1:length(High)
                     % 
                     if P1*dt>rand
                         s(j)=0;
+                        if s1b0(j)==1
+                            theta(j,i+1)=wrapTo2Pi(theta(j,i+1)+TumbleAngleSampling1(1));
+                        else
+                            theta(j,i+1)=wrapTo2Pi(theta(j,i+1)+(-1).^round(rand)*TumbleAngleSampling_Berg(1));
+                        end
                     end
                 else
-                    if s1b0(j)==1
-                        theta(j,i+1)=wrapTo2Pi(theta(j,i)+TumbleAngleSampling1(1));% exp.surface
-                    else
-                        theta(j,i+1)=wrapTo2Pi(theta(j,i)+(-1).^round(rand)*TumbleAngleSampling_Berg(1)); % exp.bulk
-                    end
+                    theta(j,i+1)=theta(j,i);
                     x(j,i+1)=x(j,i);
                     y(j,i+1)=y(j,i);
                     %%%%%%%%%%%%%

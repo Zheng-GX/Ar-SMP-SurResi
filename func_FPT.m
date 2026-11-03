@@ -59,13 +59,13 @@ for ih=1:2
                 P1=0.2^-1*Y(j)^H/Y5^H;
                 if P1*dt>rand
                     s(j)=0;
+                    if s1b0(j)==1
+                        theta(j)=wrapTo2Pi(theta(j)+TumbleAngleSampling1(1));
+                    else
+                        theta(j)=wrapTo2Pi(theta(j)+(-1).^round(rand)*TumbleAngleSampling_Berg(1));
+                    end
                 end
             else
-                if s1b0(j)==1
-                    theta(j)=wrapTo2Pi(theta(j)+TumbleAngleSampling1(1));
-                else
-                    theta(j)=wrapTo2Pi(theta(j)+(-1).^round(rand)*TumbleAngleSampling_Berg(1)); 
-                end
                 %%%%%%%%%%%%%
                 Y(j)=Ya*a(j);
                 Epsilon=alpha*(m0-m(j))+log((1+L(x(j),y(j))/KI)/(1+L(x(j),y(j))/KA));

@@ -63,8 +63,8 @@ t_max = 1000;
 idx = (xi_orig >= t_min) & (xi_orig <= t_max);
 poly = polyfit(log10(xi_orig(idx)), log10(f_orig(idx)), 1);
 y_fit = 10.^(polyval(poly, log10(xi_orig(idx))));
-plot(xi_orig(idx), y_fit*0.1, '-.', 'LineWidth',1.5, 'color',c3);
-text(24.246276965608793,1.66774147e-7,0,['slope:$\,$' num2str(round(poly(1),1))],'fontname','Timesnewroman','FontSize',13)
+% plot(xi_orig(idx), y_fit*0.1, '-.', 'LineWidth',1.5, 'color',c3);
+% text(24.246276965608793,1.66774147e-7,0,['slope:$\,$' num2str(round(poly(1),1))],'fontname','Timesnewroman','FontSize',13)
 set(gca,'YScale','log','XScale','log')
 % xlabel('FPT (s)')
 % ylabel('PDF')
@@ -125,8 +125,8 @@ t_max = 1000;
 idx = (xi_orig >= t_min) & (xi_orig <= t_max);
 poly = polyfit(log10(xi_orig(idx)), log10(f_orig(idx)), 1);
 y_fit = 10.^(polyval(poly, log10(xi_orig(idx))));
-plot(xi_orig(idx), y_fit*0.1, '-.', 'LineWidth',1.5, 'color',c3);
-text(52.46937858857361,5.06295837e-7,0,['slope:$\,$' num2str(round(poly(1),1))],'fontname','Timesnewroman','FontSize',13)
+% plot(xi_orig(idx), y_fit*0.1, '-.', 'LineWidth',1.5, 'color',c3);
+% text(52.46937858857361,5.06295837e-7,0,['slope:$\,$' num2str(round(poly(1),1))],'fontname','Timesnewroman','FontSize',13)
 set(gca,'YScale','log','XScale','log')
 
 xlim([10 t])
@@ -186,8 +186,8 @@ t_max = 1000;
 idx = (xi_orig >= t_min) & (xi_orig <= t_max);
 poly = polyfit(log10(xi_orig(idx)), log10(f_orig(idx)), 1);
 y_fit = 10.^(polyval(poly, log10(xi_orig(idx))));
-plot(xi_orig(idx), y_fit*0.1, '-.', 'LineWidth',1.5, 'color',c3);
-text(22.84839851333908,0.000001119146522,0,['slope:$\,$' num2str(round(poly(1),1))],'fontname','Timesnewroman','FontSize',13)
+% plot(xi_orig(idx), y_fit*0.1, '-.', 'LineWidth',1.5, 'color',c3);
+% text(22.84839851333908,0.000001119146522,0,['slope:$\,$' num2str(round(poly(1),1))],'fontname','Timesnewroman','FontSize',13)
 set(gca,'YScale','log','XScale','log')
 
 xlim([10 t])
@@ -201,12 +201,12 @@ set(gca, 'TickLength', [0.02, 0.025]);
 ylabel('Log-log','Units','normalized','Position',[1.17,0.506],'FontSize',13)
 box on
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-text(-1.3,2.15,'(a)','Units','normalized','Interpreter','tex','FontName','Timesnewroman','FontSize',16)
-text(-0.3,2.15,'(b)','Units','normalized','Interpreter','tex','FontName','Timesnewroman','FontSize',16)
-text(0.7,2.15,'(c)','Units','normalized','Interpreter','tex','FontName','Timesnewroman','FontSize',16)
-text(-1.3,0.88,'(d)','Units','normalized','Interpreter','tex','FontName','Timesnewroman','FontSize',16)
-text(-0.3,0.88,'(e)','Units','normalized','Interpreter','tex','FontName','Timesnewroman','FontSize',16)
-text(0.74,0.88,'(f)','Units','normalized','Interpreter','tex','FontName','Timesnewroman','FontSize',16)
+text(-1.3,2.15,'(a)','Units','normalized','Interpreter','tex','FontName','Arial','FontSize',16)
+text(-0.3,2.15,'(b)','Units','normalized','Interpreter','tex','FontName','Arial','FontSize',16)
+text(0.7,2.15,'(c)','Units','normalized','Interpreter','tex','FontName','Arial','FontSize',16)
+text(-1.3,0.88,'(d)','Units','normalized','Interpreter','tex','FontName','Arial','FontSize',16)
+text(-0.3,0.88,'(e)','Units','normalized','Interpreter','tex','FontName','Arial','FontSize',16)
+text(0.74,0.88,'(f)','Units','normalized','Interpreter','tex','FontName','Arial','FontSize',16)
 
 set(ax1,'Position',[0.151,0.59,0.262,0.341])
 set(ax2,'Position',[0.151,0.16,0.262,0.341])

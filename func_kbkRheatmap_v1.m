@@ -106,6 +106,11 @@ for ih=1:2
                 P1 = 0.2^-1 * Y_new^H / Y5^H;
                 if P1*dt>rand
                     s_new = 0;   % tumble
+                    if s1b0_old == 1
+                        theta_new = wrapTo2Pi(theta_new + TumbleAngleSampling1(1));
+                    else
+                        theta_new = wrapTo2Pi(theta_new + (-1)^round(rand)*TumbleAngleSampling_Berg(1));
+                    end
                 else
                     s_new=1;
                 end
@@ -113,11 +118,7 @@ for ih=1:2
                 % 
                 x_new = x_old;   y_new = y_old;
                 % 
-                if s1b0_old == 1
-                    theta_new = wrapTo2Pi(theta_old + TumbleAngleSampling1(1));
-                else
-                    theta_new = wrapTo2Pi(theta_old + (-1)^round(rand)*TumbleAngleSampling_Berg(1));
-                end
+                theta_new = theta_old;
                 %%%%%%%%%%%%%
                 L_cur = L(x_new, y_new);
                 Epsilon = alpha*(m0 - m_old) + log((1+L_cur/KI)/(1+L_cur/KA));
